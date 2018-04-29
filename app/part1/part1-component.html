@@ -1,0 +1,18 @@
+<h4>Part1</h4>
+<input type="text" [(ngModel)]='newUser.name'>
+<input type="text" [(ngModel)]='newUser.sname'>
+<input type="text" [(ngModel)]='newUser.age'>
+<button (click)="addNew(newUser)">add new</button>
+<ul>
+    <li *ngFor="let user of users">{{user.name}} {{user.sname}} <button (click)="sayHello(user)">hello</button></li>
+</ul>
+
+<input type="text" [(ngModel)]="option">
+
+<div [ngSwitch]="option">
+
+    <p *ngSwitchCase="'1'">1</p>
+    <p *ngSwitchCase="'2'">2</p>
+    <p *ngSwitchDefault>Default</p>
+
+</div>

@@ -10,22 +10,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AppComponent = /** @class */ (function () {
-    function AppComponent() {
-        this.appName = 'My first App';
+var ToDo = /** @class */ (function () {
+    function ToDo() {
+        this.newTask = '';
+        this.taskList = [
+            { taskName: 'Learn Angular', edit: false, completed: false },
+            { taskName: 'Create Barrel file', edit: false, completed: false }
+        ];
     }
-    AppComponent.prototype.sayHello = function () {
-        alert('Hello');
+    ToDo.prototype.addNew = function (newTaskName) {
+        this.taskList.push({ taskName: newTaskName, edit: false, completed: false });
+        this.newTask = '';
     };
-    AppComponent = __decorate([
+    ToDo.prototype.delete = function (i) {
+        this.taskList.splice(i, 1);
+    };
+    ToDo.prototype.edit = function (task) {
+        task.edit = true;
+    };
+    ToDo.prototype.save = function (task) {
+        task.edit = false;
+    };
+    ToDo = __decorate([
         core_1.Component({
-            selector: 'app-component',
-            templateUrl: 'app/app-component.html',
-            styleUrls: ['app/app.component.css']
+            moduleId: module.id,
+            selector: "todo",
+            templateUrl: "todo-component.html",
+            styleUrls: ['todo-component.css']
         }),
         __metadata("design:paramtypes", [])
-    ], AppComponent);
-    return AppComponent;
+    ], ToDo);
+    return ToDo;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.ToDo = ToDo;
+//# sourceMappingURL=todo-component.js.map

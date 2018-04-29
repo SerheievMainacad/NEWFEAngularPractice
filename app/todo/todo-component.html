@@ -1,0 +1,27 @@
+<div>
+    <input type="text" [(ngModel)]="newTask"><button (click)="addNew(newTask)">addNewTask</button>
+</div>
+
+<table width="100%" cellspacing="0" cellpadding="5" border="1">
+    <thead>
+        <th>TaskName</th>
+        <th>controls</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let task of taskList; let i = index">
+            <td width="70%">
+                <span [class.complete]="task.completed" [style.display]="task.edit ? 'none' : 'block'">
+                    {{task.taskName}}
+                </span>
+                <span [style.display]="task.edit ? 'block' : 'none'">
+                    <input type="text" [(ngModel)]="task.taskName">
+                </span>
+            </td>
+            <td>
+                <button (click)="edit(task)" [style.display]="task.edit ? 'none' : 'block'">edit</button>
+                <button (click)="save(task)" [style.display]="task.edit ? 'block' : 'none'">save</button>
+                <button (click)="delete(i)">delete</button>  
+            </td>
+        </tr>
+    </tbody>
+</table>

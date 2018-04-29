@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 
 
+
+
+
 @Component({
 	selector: 'app-component',
 	templateUrl: 'app/app-component.html',
@@ -9,5 +12,13 @@ import { Component } from '@angular/core';
 
 
 export class AppComponent{
-	
+	public appName: string;
+	constructor(){
+		this.appName = 'My first App';
+	}
+
+	public sayHello(){
+		alert('Hello')
+	}
+
 }

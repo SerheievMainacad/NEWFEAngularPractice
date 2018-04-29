@@ -10,22 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AppComponent = /** @class */ (function () {
-    function AppComponent() {
-        this.appName = 'My first App';
+var SecondComponent = /** @class */ (function () {
+    function SecondComponent() {
+        this.name = 'Second component';
     }
-    AppComponent.prototype.sayHello = function () {
-        alert('Hello');
-    };
-    AppComponent = __decorate([
+    SecondComponent = __decorate([
         core_1.Component({
-            selector: 'app-component',
-            templateUrl: 'app/app-component.html',
-            styleUrls: ['app/app.component.css']
+            moduleId: module.id,
+            selector: 'second-component',
+            templateUrl: 'second-component.html',
+            styleUrls: ['second-component.css']
         }),
         __metadata("design:paramtypes", [])
-    ], AppComponent);
-    return AppComponent;
+    ], SecondComponent);
+    return SecondComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.SecondComponent = SecondComponent;
+//# sourceMappingURL=second-component.js.map
